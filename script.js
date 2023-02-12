@@ -7,7 +7,6 @@ const students = [
   { name: 'Faustão', firstNote: 3, secondNote: 3 },
 ]
 
-
 const calculateAverage = (firstNote, secondNote) => {
   let average = ((firstNote + secondNote) / 2).toFixed(2)
   return average
@@ -18,9 +17,9 @@ for (let student of students) {
 
   let approved = averateStudent >= 7
 
-  if (approved) {
-    alert(`A media do aluno(a) ${student.name} é: ${averateStudent}\nParabéns ${student.name}! Você foi aprovado(a) no concurso!`)
-  } else {
-    alert(`A media do aluno(a) ${student.name} é: ${averateStudent}\nNão foi dessa vez ${student.name}! Tente novamente!`)
-  }
+  let resultMessage = approved
+    ? `Parabéns ${student.name}! Você foi aprovado(a) no concurso!`
+    : `Não foi dessa vez ${student.name}! Tente novamente!`
+
+  alert(`A media do aluno(a) ${student.name} é: ${averateStudent}\n${resultMessage}`)
 }
